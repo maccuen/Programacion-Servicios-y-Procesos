@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Saludo con WebSockets</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/main.css" rel="stylesheet">
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/app.js"></script>
+</head>
+<body>
+<noscript><h2 style="color: #ff0000">Parece que tu navegador no soporta Javascript! Websocket se basa en Javascript, por lo que
+    necesitamos que lo actives y recargues la página!</h2></noscript>
+<div id="principal" class="contenedor">
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="conectar">Conexion WebSocket:</label>
+                    <button id="conectar" class="btn btn-default" type="submit">Conectar</button>
+                    <button id="desconectar" class="btn btn-default" type="submit" disabled="disabled">Desconectar
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="nombre">¿Como te llamas?</label>
+                    <input type="text" id="nombre" class="form-control" placeholder="Pon aqui tu nombre...">
+                </div>
+                <button id="enviar" class="btn btn-default" type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table id="conversacion" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Saludos</th>
+                </tr>
+                </thead>
+                <tbody id="saludos">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
